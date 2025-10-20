@@ -15,7 +15,7 @@ html, body {
 }
 
 .btn-primary {
-  @apply inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-clouthr-indigo via-clouthr-purple to-clouthr-orange text-white px-5 py-3 font-medium shadow hover:opacity-95 transition;
+  @apply inline-flex items-center gap-2 rounded-md bg-violet-300 text-violet-900 px-5 py-3 font-medium shadow hover:bg-violet-400 transition;
 }
 
 .card {
