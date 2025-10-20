@@ -31,7 +31,7 @@ export default function HomePage() {
           </div>
           <div className="relative">
             <div className="absolute -inset-6 rounded-3xl bg-brand-gradient blur-2xl opacity-30" />
-            <div className="card p-8 relative">
+            <div className="card card-hover-glow p-8 relative">
               <h3 className="font-semibold text-xl mb-4">Why CloutHR?</h3>
               <ul className="space-y-3 text-slate-700">
                 <li>Commitment • Professionalism • Customer Satisfaction</li>
@@ -86,7 +86,7 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <div className="card p-8 flex items-center justify-between flex-col md:flex-row gap-6">
+        <div className="card card-hover-glow p-8 flex items-center justify-between flex-col md:flex-row gap-6">
           <div>
             <h3 className="font-semibold text-xl">Ready to modernize your HR?</h3>
             <p className="text-slate-600">Let our experts streamline and digitize your HR processes.</p>
