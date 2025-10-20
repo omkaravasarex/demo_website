@@ -24,7 +24,7 @@ export default function SimpleCarousel({ images }: { images: ImageItem[] }) {
         {images.map((img) => (
           <div
             key={img.src}
-            className="carousel-item min-w-[280px] h-[180px] rounded-xl bg-slate-200 overflow-hidden snap-start border border-slate-200 card-hover-glow"
+            className="carousel-item min-w-[280px] h-[180px] rounded-xl bg-slate-200 overflow-hidden snap-start border border-slate-200"
           >
             {/* Placeholder block; replace with <img> when assets available */}
             <div

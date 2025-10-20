@@ -7,7 +7,7 @@ export default function ServicesPage() {
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((s) => (
-          <div className="card card-hover-glow p-6 glow-on-scroll" data-glow key={s.title}>
+          <div className="card p-6" key={s.title}>
             <h3 className="font-semibold text-lg">{s.title}</h3>
             <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
           </div>
