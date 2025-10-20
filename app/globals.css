@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 10px;
+}
+
+html, body {
+  @apply bg-white text-slate-800 antialiased;
+}
+
+.container-responsive {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-clouthr-indigo via-clouthr-purple to-clouthr-orange text-white px-5 py-3 font-medium shadow hover:opacity-95 transition;
+}
+
+.card {
+  @apply rounded-xl border border-slate-200 bg-white/80 backdrop-blur shadow-sm;
+}
+
+.section {
+  @apply container-responsive py-16;
+}
