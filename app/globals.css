@@ -7,7 +7,7 @@
 }
 
 html, body {
-  @apply bg-brand-radial text-slate-800 antialiased;
+  @apply bg-violet-50 text-slate-800 antialiased;
 }
 
 .container-responsive {
@@ -34,6 +34,25 @@ html, body {
     0 10px 22px rgba(2, 6, 23, 0.06),
     0 4px 10px rgba(2, 6, 23, 0.05);
   transform: translateY(-2px);
+}
+
+/* Accent aura backdrop used for highlighted cards */
+.aura {
+  position: relative;
+}
+.aura::before {
+  content: "";
+  position: absolute;
+  inset: -1.5rem; /* similar to -inset-6 */
+  border-radius: 1.75rem;
+  background: linear-gradient(90deg, #5b2cff 0%, #6b2ad6 35%, #f59e0b 100%);
+  filter: blur(36px);
+  opacity: 0.22;
+  pointer-events: none;
+}
+.aura > * {
+  position: relative;
+  z-index: 1;
 }
 
 .section {

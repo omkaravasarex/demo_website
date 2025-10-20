@@ -37,7 +37,7 @@ export default function AboutPage() {
       <div className="mt-12">
         <h2 className="text-2xl font-bold mb-6">Founders</h2>
         <div className="grid sm:grid-cols-2 gap-6">
-          <div className="card card-hover-glow p-6 text-center">
+          <div className="card p-6 text-center">
             <div className="mx-auto h-32 w-32 rounded-full bg-gradient-to-br from-clouthr-indigo via-clouthr-purple to-clouthr-orange" aria-label="Founder photo placeholder" />
             <h3 className="mt-4 font-semibold">Founder Name 1</h3>
             <p className="mt-2 text-sm text-slate-600">
@@ -45,7 +45,7 @@ export default function AboutPage() {
               located under <code>/public/images/founders/founder1.jpg</code>.
             </p>
           </div>
-          <div className="card card-hover-glow p-6 text-center">
+          <div className="card p-6 text-center">
             <div className="mx-auto h-32 w-32 rounded-full bg-gradient-to-br from-clouthr-indigo via-clouthr-purple to-clouthr-orange" aria-label="Founder photo placeholder" />
             <h3 className="mt-4 font-semibold">Founder Name 2</h3>
             <p className="mt-2 text-sm text-slate-600">
