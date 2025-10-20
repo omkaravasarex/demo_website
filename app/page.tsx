@@ -34,11 +34,24 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Mission highlight under hero */}
+      <section className="section pt-0">
+        <h2 className="text-2xl font-bold mb-6">Our Mission</h2>
+        <div className="grid sm:grid-cols-3 gap-4">
+          {['Commitment', 'Professionalism', 'Customer Satisfaction'].map((v) => (
+            <div key={v} className="card p-6 text-center glow-on-scroll" data-glow>
+              <div className="h-2 w-12 mx-auto bg-gradient-to-r from-clouthr-indigo to-clouthr-orange rounded" />
+              <h3 className="mt-3 font-semibold">{v}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="section">
         <h2 className="text-2xl font-bold mb-6">Our Services</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s) => (
-            <div className="card p-6" key={s.title}>
+            <div className="card p-6 glow-on-scroll" data-glow key={s.title}>
               <h3 className="font-semibold text-lg">{s.title}</h3>
               <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
             </div>

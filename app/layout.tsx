@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Link from 'next/link';
+import ClientEffects from '../components/ClientEffects';
 
 export const metadata: Metadata = {
   title: 'CloutHR Solutions LLP',
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <ClientEffects />
         <Header />
         <main className="min-h-screen bg-brand-radial">{children}</main>
         <Footer />
