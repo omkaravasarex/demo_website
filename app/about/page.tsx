@@ -18,6 +18,28 @@ export default function AboutPage() {
         with various labour law experts will help you to keep updated with latest updates and
         amendments in the labour laws. We can also provide legal opinions on your compliance issues.
       </p>
+      
+      <div className="mt-12">
+        <h2 className="text-2xl font-bold mb-6">Founders</h2>
+        <div className="grid sm:grid-cols-2 gap-6">
+          <div className="card p-6 text-center">
+            <div className="mx-auto h-32 w-32 rounded-full bg-gradient-to-br from-clouthr-indigo via-clouthr-purple to-clouthr-orange" aria-label="Founder photo placeholder" />
+            <h3 className="mt-4 font-semibold">Founder Name 1</h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Short description about Founder 1. Replace the above placeholder with a real photo
+              located under <code>/public/images/founders/founder1.jpg</code>.
+            </p>
+          </div>
+          <div className="card p-6 text-center">
+            <div className="mx-auto h-32 w-32 rounded-full bg-gradient-to-br from-clouthr-indigo via-clouthr-purple to-clouthr-orange" aria-label="Founder photo placeholder" />
+            <h3 className="mt-4 font-semibold">Founder Name 2</h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Short description about Founder 2. Replace the above placeholder with a real photo
+              located under <code>/public/images/founders/founder2.jpg</code>.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

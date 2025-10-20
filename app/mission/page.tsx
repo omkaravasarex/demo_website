@@ -9,7 +9,7 @@ export default function MissionPage() {
       </p>
       <div className="grid sm:grid-cols-3 gap-4 mt-8">
         {['Commitment', 'Professionalism', 'Customer Satisfaction'].map((v) => (
-          <div key={v} className="card p-6 text-center">
+          <div key={v} className="card p-6 text-center glow-on-scroll" data-glow>
             <div className="h-2 w-12 mx-auto bg-gradient-to-r from-clouthr-indigo to-clouthr-orange rounded" />
             <h3 className="mt-3 font-semibold">{v}</h3>
           </div>

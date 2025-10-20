@@ -25,3 +25,43 @@ html, body {
 .section {
   @apply container-responsive py-16;
 }
+
+/* On-scroll glow effect for elements with data-glow */
+.glow-on-scroll[data-glow] {
+  position: relative;
+  transition: box-shadow 600ms ease, transform 600ms ease, border-color 600ms ease;
+}
+
+.glow-on-scroll[data-glow]::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px; /* slightly larger than .card radius */
+  background: radial-gradient(120px 120px at var(--mx, 50%) var(--my, 0%), rgba(99,102,241,0.35), rgba(236,72,153,0.25), rgba(249,115,22,0.2) 60%, transparent 70%);
+  opacity: 0;
+  filter: blur(18px);
+  pointer-events: none;
+  transition: opacity 600ms ease;
+}
+
+.glow-on-scroll[data-glow].in-view {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.08), 0 8px 14px rgba(2,6,23,0.06);
+  border-color: rgb(196 181 253 / 0.5);
+}
+
+.glow-on-scroll[data-glow].in-view::after {
+  opacity: 1;
+}
+
+/* Optional: follow cursor for subtle parallax glow when hovered */
+.glow-on-scroll[data-glow] {
+  --mx: 50%;
+  --my: 0%;
+}
+.glow-on-scroll[data-glow]:hover {
+  will-change: transform, box-shadow;
+}
+.glow-on-scroll[data-glow]:hover::after {
+  opacity: 1;
+}
