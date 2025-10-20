@@ -1,20 +1,15 @@
 "use client";
 import Link from 'next/link';
-import { useState, KeyboardEvent } from 'react';
+import { KeyboardEvent } from 'react';
+import SimpleCarousel from '../components/SimpleCarousel';
 
 export default function HomePage() {
-  const [openMissionIndex, setOpenMissionIndex] = useState<number | null>(null);
-  const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null);
+  // Always show text; no toggling needed per requirements
 
   const handleKeyToggle = (
-    e: KeyboardEvent<HTMLDivElement>,
-    toggle: () => void
-  ) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggle();
-    }
-  };
+    _e: KeyboardEvent<HTMLDivElement>,
+    _toggle: () => void
+  ) => {};
   return (
     <div>
       <section className="section">
@@ -53,48 +48,38 @@ export default function HomePage() {
       <section className="section pt-0">
         <h2 className="text-2xl font-bold mb-6">Our Mission</h2>
         <div className="grid sm:grid-cols-3 gap-4">
-          {['Commitment', 'Professionalism', 'Customer Satisfaction'].map((v, idx) => (
-            <div
-              key={v}
-              className="card card-hover-glow p-6 text-center glow-on-scroll cursor-pointer select-none"
-              data-glow
-              role="button"
-              tabIndex={0}
-              aria-expanded={openMissionIndex === idx}
-              onClick={() => setOpenMissionIndex(openMissionIndex === idx ? null : idx)}
-              onKeyDown={(e) => handleKeyToggle(e, () => setOpenMissionIndex(openMissionIndex === idx ? null : idx))}
-            >
+          {['Commitment', 'Professionalism', 'Customer Satisfaction'].map((v) => (
+            <div key={v} className="card p-6 text-center">
               <div className="h-2 w-12 mx-auto bg-gradient-to-r from-clouthr-indigo to-clouthr-orange rounded" />
               <h3 className="mt-3 font-semibold">{v}</h3>
-              {openMissionIndex === idx && (
-                <p className="mt-3 text-sm text-slate-600">
-                  {v} drives our HR solutions to be reliable, modern, and people-focused. This is a
-                  short placeholder paragraph describing the topic.
-                </p>
-              )}
+              <p className="mt-3 text-sm text-slate-600">
+                {v} drives our HR solutions to be reliable, modern, and people-focused. This is a
+                short placeholder paragraph describing the topic.
+              </p>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Carousel between Our Mission and Our Services */}
+      <section className="section pt-0">
+        <SimpleCarousel
+          images={[
+            { src: "/images/mission/slide1.jpg", alt: "Team collaboration" },
+            { src: "/images/mission/slide2.jpg", alt: "Digital HR transformation" },
+            { src: "/images/mission/slide3.jpg", alt: "Compliance and governance" },
+            { src: "/images/mission/slide4.jpg", alt: "Analytics and insights" },
+          ]}
+        />
+      </section>
+
       <section className="section">
         <h2 className="text-2xl font-bold mb-6">Our Services</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s, idx) => (
-            <div
-              className="card card-hover-glow p-6 glow-on-scroll cursor-pointer select-none"
-              data-glow
-              key={s.title}
-              role="button"
-              tabIndex={0}
-              aria-expanded={openServiceIndex === idx}
-              onClick={() => setOpenServiceIndex(openServiceIndex === idx ? null : idx)}
-              onKeyDown={(e) => handleKeyToggle(e, () => setOpenServiceIndex(openServiceIndex === idx ? null : idx))}
-            >
+          {services.map((s) => (
+            <div className="card p-6" key={s.title}>
               <h3 className="font-semibold text-lg">{s.title}</h3>
-              {openServiceIndex === idx && (
-                <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
-              )}
+              <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
             </div>
           ))}
         </div>

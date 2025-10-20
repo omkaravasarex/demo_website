@@ -21,20 +21,16 @@ export default function AboutPage() {
             amendments in the labour laws. We can also provide legal opinions on your compliance issues.
           </p>
         </div>
-        {/* Right-side horizontal image space */}
+        {/* Right-side single horizontal image placeholder */}
         <div>
-          <div className="overflow-x-auto hide-scrollbar">
-            <div className="flex gap-4 snap-x snap-mandatory">
-              {[
-                { src: '/images/about/slide1.jpg', alt: 'Teamwork' },
-                { src: '/images/about/slide2.jpg', alt: 'Modern HR tools' },
-                { src: '/images/about/slide3.jpg', alt: 'Analytics' },
-              ].map((img) => (
-                <div key={img.src} className="min-w-[260px] h-[160px] rounded-xl bg-gradient-to-br from-clouthr-indigo via-clouthr-purple to-clouthr-orange opacity-80 snap-start" aria-label={img.alt} />
-              ))}
-            </div>
-          </div>
-          <p className="text-xs text-slate-500 mt-2">Replace the placeholders with images under <code>/public/images/about</code>.</p>
+          <div
+            className="h-48 md:h-60 w-full rounded-xl bg-slate-200 border border-slate-200 overflow-hidden"
+            role="img"
+            aria-label="About page horizontal image placeholder"
+          />
+          <p className="text-xs text-slate-500 mt-2">
+            Replace with a single horizontal image under <code>/public/images/about/banner.jpg</code>.
+          </p>
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-import SimpleCarousel from "../../components/SimpleCarousel";
+// Removed carousel from inside Mission page per requirement
 
 export default function MissionPage() {
   return (
@@ -10,21 +10,19 @@ export default function MissionPage() {
         practices in Human Resource domain.
       </p>
 
-      {/* Horizontal image carousel */}
+      {/* Horizontal image section */}
       <div className="mt-8">
-        <SimpleCarousel
-          images={[
-            { src: "/images/mission/slide1.jpg", alt: "Team collaboration" },
-            { src: "/images/mission/slide2.jpg", alt: "Digital HR transformation" },
-            { src: "/images/mission/slide3.jpg", alt: "Compliance and governance" },
-            { src: "/images/mission/slide4.jpg", alt: "Analytics and insights" },
-          ]}
+        <div
+          className="h-48 md:h-60 w-full rounded-xl bg-slate-200 border border-slate-200 overflow-hidden"
+          role="img"
+          aria-label="Mission page horizontal image placeholder"
         />
+        <p className="text-xs text-slate-500 mt-2">Replace with a single horizontal image under <code>/public/images/mission/banner.jpg</code>.</p>
       </div>
 
       <div className="grid sm:grid-cols-3 gap-4 mt-10">
         {['Commitment', 'Professionalism', 'Customer Satisfaction'].map((v) => (
-          <div key={v} className="card card-hover-glow p-6 text-center glow-on-scroll" data-glow>
+          <div key={v} className="card p-6 text-center">
             <div className="h-2 w-12 mx-auto bg-gradient-to-r from-clouthr-indigo to-clouthr-orange rounded" />
             <h3 className="mt-3 font-semibold">{v}</h3>
           </div>
