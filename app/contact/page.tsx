@@ -1,11 +1,14 @@
 "use client";
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 
 export default function ContactPage() {
   const [status, setStatus] = useState<string | null>(null);
 
-  async function onSubmit(formData: FormData) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     setStatus('Sending...');
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const res = await fetch('/api/contact', {
       method: 'POST',
       body: JSON.stringify({
@@ -15,14 +18,18 @@ export default function ContactPage() {
       }),
       headers: { 'Content-Type': 'application/json' },
     });
-    if (res.ok) setStatus('Thanks! We will get back to you.');
-    else setStatus('Something went wrong. Please try again.');
+    if (res.ok) {
+      setStatus('Thanks! We will get back to you.');
+      form.reset();
+    } else {
+      setStatus('Something went wrong. Please try again.');
+    }
   }
 
   return (
     <section className="section">
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
-      <form action={onSubmit} className="card p-6 max-w-xl space-y-4">
+      <form onSubmit={onSubmit} className="card p-6 max-w-xl space-y-4">
         <div>
           <label className="block text-sm font-medium">Name</label>
           <input name="name" required className="mt-1 w-full rounded-md border px-3 py-2" />
