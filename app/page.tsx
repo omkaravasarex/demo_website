@@ -1,15 +1,7 @@
-"use client";
 import Link from 'next/link';
-import { KeyboardEvent } from 'react';
 import SimpleCarousel from '../components/SimpleCarousel';
 
 export default function HomePage() {
-  // Always show text; no toggling needed per requirements
-
-  const handleKeyToggle = (
-    _e: KeyboardEvent<HTMLDivElement>,
-    _toggle: () => void
-  ) => {};
   return (
     <div>
       <section className="section">
@@ -25,7 +17,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex items-center gap-4 flex-wrap">
               <Link href="/services" className="btn-primary">Explore Services</Link>
-              <Link href="/brochure.pdf" download className="btn-primary">Download PDF</Link>
+              <a href="/brochure.pdf" download className="btn-primary">Download PDF</a>
               <Link href="/contact" className="underline hover:text-clouthr-purple">Talk to us</Link>
             </div>
           </div>
@@ -92,7 +84,7 @@ export default function HomePage() {
           </div>
           <div className="flex items-center gap-3">
             <Link className="btn-primary" href="/contact">Get in touch</Link>
-            <Link className="btn-primary" href="/brochure.pdf" download>Download PDF</Link>
+            <a className="btn-primary" href="/brochure.pdf" download>Download PDF</a>
           </div>
         </div>
       </section>
