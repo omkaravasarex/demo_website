@@ -1,15 +1,7 @@
-"use client";
 import Link from 'next/link';
-import { KeyboardEvent } from 'react';
 import SimpleCarousel from '../components/SimpleCarousel';
 
 export default function HomePage() {
-  // Always show text; no toggling needed per requirements
-
-  const handleKeyToggle = (
-    _e: KeyboardEvent<HTMLDivElement>,
-    _toggle: () => void
-  ) => {};
   return (
     <div>
       <section className="section">
